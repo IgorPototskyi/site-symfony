@@ -1,6 +1,7 @@
 @import "fonts"
 @import "libs"
 @import "vars"
+@import "button"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -37,9 +38,176 @@ body
 	overflow-x: hidden
 	opacity: 1
 
+	&.ishome
+		.site-header
+			min-height: 700px
+			height: 100vh
+			background-color: $dark
+			.top-line
+				padding-top: 40px
+				position: absolute
+				width: 100%
+				z-index: 1
+
+.h1, .h2, .h3, .h4, .h5, .h6 
+	text-transform: uppercase
+	line-height: 1.4
+
+.logo
+	img
+		width: 125px
+		height: auto
+		padding-left: 45px
+
+.phone
+	position: absolute
+	right: 85px
+	top: 44px
+	font-family: firasans, sans-serif
+	font-size: 22px
+	white-space: nowrap
+	.fa
+		// color: #555
+		font-size: 22px
+		margin-right: 3px
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+	color: #fff
+
+section
+	background-color: #fff
+
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
+
+.hamburger
+	position: absolute
+	right: 0
+	top: 36px
+	
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+	width: 34px
+	height: 2px
+	border-radius: 0
+	background-color: #fff
+
+.mm-navbar
+	height: auto
+	position: relative
+	border: none
+	.mm-title
+		margin: 0 
+		img
+			width: 128px
+			height: auto
+			margin: 0
+
+html.mm-opened
+	overflow-y: scroll
+
+.mm-panels > .mm-panel.mm-hasnavbar
+	right: -18px
+
+.mm-listview > li:not(.mm-divider)::after
+	display: none
+
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next), .mm-menu.mm-theme-black .mm-listview>li.mm-selected>span
+	background-color: transparent
+	color: $accent
+
+.mm-panels>.mm-panel.mm-hasnavbar
+	padding-top: 0
+
+.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
+	height: 0
+
+.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview
+	margin-top: 0
+
+.mm-listview 
+	> li
+		> a
+			// display: inline-block
+			transition: color .5s ease
+			padding: 8px 14%
+			&:hover
+				color: $accent
+				&::before
+					color: $accent
+					transition: color .5s ease
+			&::before
+				content: '\f219'		
+				font-family: fontawesome
+				text-decoration: none
+				font-size: 12px
+				color: #fff
+				margin-right: 20px
+
+		&.active > a
+			color: $accent
+		
+.header-flex
+	display: flex
+	height: 100%
+	position: relative
+
+.flex-center
+	margin: auto
+
+.header-composition
+	text-align: center
+	position: relative
+	> p
+		margin-top: 40px
+	.button
+		margin-top: 25px
+
+.welcome
+	p
+		font-size: 14px
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		margin-bottom: -10px
+		&::before, &::after
+				content: ''
+				height: 1px
+				width: 100%
+				position: relative
+				background-color: #fff
+				display: inline-block
+		span
+			margin: 0 10px
+
+	.h1
+		font-weight: 100
+		font-size: 70px
+		margin: 0
+		line-height: 1.6
+		border-bottom: 1px solid #fff
+		white-space: nowrap
+
+	strong
+		display: block 
+		font-size: 17px
+		text-transform: uppercase
+		margin-top: 25px
+		.fa
+			margin-right: 10px
+			font-size: 12px
+			color: #555 
+			&:last-child
+				margin-right: 0
+				margin-left: 10px
+				
+		
+
 
 @import "media" // Всегда в конце
