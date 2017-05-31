@@ -19,13 +19,6 @@
 	color: #666
 	opacity: 1
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
-
 html, body
 	height: 100%
 
@@ -356,6 +349,16 @@ $colors: $blue, $red, $accent
 	&-about
 		p
 			margin: 30px 0
+	&-call
+		background-size: cover
+		&::before
+			content: ''
+			width: 50%
+			height: 100%
+			position: absolute
+			right: 0
+			background-color: rgba($accent, .9)
+
 		
 .section-overlay
 	&::before
@@ -394,6 +397,78 @@ $colors: $blue, $red, $accent
 			&::before
 				content: '\f104'
 				margin-left: 20px
+
+input, textarea, select
+	background-color: transparent
+	border: 1px solid rgba(#000, .1)
+	border-bottom: 2px solid rgba(#000, .1)
+	border-radius: 2px
+	padding: 8px 22px
+	outline: none
+	color: $dark
+	display: inline-block
+	
+select
+	padding: 10px 22px
+
+.success
+	display: none
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	text-transform: uppercase
+	font-weight: bold
+	// display: flex
+	z-index: 10
+	span
+		margin: auto
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
+
+.callback
+	padding: 25% 0	
+	position: relative
+	&-logo
+		img
+			width: 100px
+			height: auto
+	
+	&-head
+		margin: 0
+		font-size: 30px
+		font-weight: 800
+		text-transform: uppercase
+
+	p
+		margin-top: 0
+
+	input, textarea, select
+		color: #fff
+		width: 100%
+		margin-top: 15px
+		font-family: firasans, sans-serif
+
+		&::-webkit-input-placeholder
+			color: #fff
+			opacity: 1
+		&::-moz-placeholder
+			color: #fff
+			opacity: 1
+		&::-ms-input-placeholder
+			color: #fff
+			
+		option
+			color: $dark
+			background-color: $accent
+
+	.button
+		margin-top: 35px
 
 	
 

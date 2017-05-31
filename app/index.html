@@ -250,13 +250,65 @@
 
 						<div class="col-md-7">
 							<div class="section-gallery fotorama" data-nav="thumbs" data-thumbwidth="110"
-								data-thumbheight="62" data-thumbborderwidth="5" data-thumbmargin="10" data-width="100%">
+								data-thumbheight="62" data-thumbborderwidth="5" data-thumbmargin="10" 
+								data-width="100%" data-transition="crossfade">
 								<img src="img/photos/photo-1.jpg" alt="Фото салона красоты">
 								<img src="img/photos/photo-2.jpg" alt="Фото салона красоты">
 								<img src="img/photos/photo-3.jpg" alt="Фото салона красоты">
 								<img src="img/photos/photo-4.jpg" alt="Фото салона красоты">
 							</div>
 						</div>
+
+					</div>
+				</div>
+			</section>
+
+<!-- section call -->
+			<section class="s-call inverse" style="background-image: url(img/bg-call.jpg)">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-5 col-md-offset-7 col-sm-6 col-sm-offset-6">
+							<form class="callback">
+								<div class="success"><span>Спасибо за заявку!</span></div>
+
+								<!-- Hidden Required Fields -->
+								<input type="hidden" name="project_name" value="S&Mitler">
+								<input type="hidden" name="admin_email" value="igorekpototsky@gmail.com">
+								<input type="hidden" name="form_subject" value="Заявка с сайта S&Mitler">
+								<!-- End of Hidden Required Fields -->
+
+								<input type="hidden" name="page" value="">
+
+								<div class="callback-logo">
+									<img src="img/logo-top.svg" alt="S&Mitler">
+								</div>
+								<div class="callback-head">Оставить заявку</div>
+								<p>Оставьте заявку и мы вам перезвоним в течении 15 минут</p>
+
+								<input type="text" name="name" placeholder="Ваше имя..." required>
+								<input type="text" name="phone" placeholder="Ваш телефон..." required>
+								<select name="service">
+									<option value disabled selected>Выбрать услугу...</option> 
+									<option>Парикмахерский сервис</option>
+									<option>Косметологический сервис</option>
+									<option>Маникюрный сервис</option>
+									<option>Массаж и SPA</option>
+									<option>Солярий</option>
+								</select>
+								<button class="button button-service">Отправить</button>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="s-review inverse section-overlay" style="background-image: url(img/bg-review.jpg)">
+				<div class="container">
+					<div class="row">
+						
+						
 
 					</div>
 				</div>
