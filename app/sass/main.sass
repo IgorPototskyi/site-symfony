@@ -46,6 +46,9 @@ body
 	text-transform: uppercase
 	line-height: 1.4
 
+.text-center
+	text-align: center
+
 .logo
 	img
 		width: 125px
@@ -358,6 +361,13 @@ $colors: $blue, $red, $accent
 			position: absolute
 			right: 0
 			background-color: rgba($accent, .9)
+	&-partners.section-overlay
+		&::before
+			background-color: #fff
+		.h2 
+			span
+				color: $accent
+
 
 		
 .section-overlay
@@ -470,6 +480,182 @@ select
 	.button
 		margin-top: 35px
 
-	
+.carousel-reviews
+	text-align: center
+
+	.owl-dots
+		width: 100%
+		text-align: center
+		margin-top: 60px
+		.owl-dot
+			width: 8px
+			height: 8px
+			background-color: #fff
+			border-radius: 4px
+			display: inline-block
+			margin: 5px
+			transition: background-color .5s ease, transform .5s ease
+			&.active 
+				background-color: $accent
+				transform: scale(1.3)
+
+	.review
+		margin-top: 20px
+		&-header
+			font-family: 'Times New Roman', serif
+			font-style: italic
+			font-size: 30px
+			font-weight: bold
+		&-date
+			font-style: italic
+			font-size: 15px
+			color: #999
+			span
+				font-family: 'Times New Roman', serif
+		&-stars
+			margin: 18px 0 30px
+			color: $accent
+			font-size: 14px
+			.fa
+				margin: 0 2px
+		&-text
+			color: #95989A
+			
+.quotes
+	position: absolute
+	width: 100%
+	&::after, &::before
+		content: ',,'
+		display: block
+		position: absolute
+		font-size: 56px
+		color: $accent
+		font-family: 'Times New Roman', serif
+		font-weight: bold
+		line-height: 0
+	&::before
+		top: 220px
+		left: -60px
+		transform: rotate(180deg)
+	&::after
+		right: -60px
+		top: 182px
+
+.carousel-partners
+	.owl-stage
+		display: flex
+		margin: 30px 0
+		.owl-item
+			margin: auto 10px
+			img
+				max-width: 100%
+				width: auto
+				display: inline-block
+				
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		z-index: 2
+		.owl-prev, .owl-next
+			position: absolute
+			top: 50px
+			color: #999
+			font-size: 30px
+			transition: opacity .5s ease
+			padding: 0 10px
+			&:hover
+				opacity: .5
+		.owl-prev
+				left: -60px
+		.owl-next
+				right: -60px
+
+.main-footer
+	background-color: #242424
+	padding: 3% 0
+	color: #fff
+	font-size: 14px
+	.footer-column
+		margin: 15px 0
+		.footer-addr
+			font-size: 15px
+			.fa
+				margin-right: 10px
+				font-size: 18px
+				color: #555
+			span
+				font-size: 26px
+				color: #fff
+				font-family: firasans, sans-serif
+				white-space: nowrap
+			&:last-child
+				padding-top: 15px
+				.fa
+					font-size: 24px
+		
+		.logo-footer
+			width: 125px
+			height: auto
+			+ p
+				color: #666
+				padding: 0
+				margin: 15px 0
+		
+		.footer-social
+			margin-top: 20px
+			.social
+				li
+					display: inline-block
+					margin: 4px
+					a
+						color: #ababab
+						margin-bottom: 0
+						transition: color .5s ease, background-color .5s ease
+						&:hover
+							color: rgba(#fff, .8)
+		.footer-menu
+			ul
+				padding: 0
+				margin: 0
+				list-style-type: none
+				li.active
+					a
+						color: $accent
+					&::before
+						color: $accent
+				a
+					color: #979797
+					transition: color .25s ease
+					display: inline-block
+					padding: 4px 0
+					text-decoration: underline
+					padding-left: 25px
+					position: relative
+					&:hover, &:active
+						color: $accent
+						&::before
+							color: $accent
+					&::before
+						position: absolute
+						left: 0
+						top: 6px
+						top: 
+						font-family: fontawesome
+						content: '\f219'
+						font-size: 12px
+						color: #fff
+						transition: color .5s ease
+					
+		.map
+			max-height: 200px
+			opacity: .8
+			transition: opacity .5s ease
+			&:hover
+				opacity: 1
+
+
+
+
 
 @import "media" // Всегда в конце
