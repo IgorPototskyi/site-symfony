@@ -49,9 +49,56 @@ body
 .text-center
 	text-align: center
 
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+
+.preloader
+	position: fixed
+	top: 0
+	bottom: 0
+	right: 0
+	left: 0
+	z-index: 100
+	background-color: $dark
+	.pulse
+		position: relative
+		left: 50%
+		top: 50vh
+		margin: 
+			top: -40px
+			right: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid #323232
+			width: 80px
+			height: 80px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer .8s ease-in infinite
+		&::after
+			animation: pulse-inner .8s linear infinite
+
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)
+
 .logo
 	img
-		width: 125px
+		width: 200px
 		height: auto
 		padding-left: 45px
 
@@ -127,20 +174,20 @@ html.mm-opened
 	color: $accent
 
 .mm-panels>.mm-panel.mm-hasnavbar
-	padding-top: 0
+	padding-top: 20px
 
 .mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
 	height: 0
 
 .mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview
-	margin-top: 0
+	margin-top: 20px
 
 .mm-listview 
 	> li
 		> a
 			// display: inline-block
 			transition: color .5s ease
-			padding: 8px 14%
+			padding: 10px 14%
 			&:hover
 				color: $accent
 				&::before
@@ -292,7 +339,7 @@ $colors: $blue, $red, $accent
 
 		&-content
 			position: relative
-			padding: 60px 10%
+			padding: 50px 10%
 
 		&-composition
 			margin: auto
@@ -301,7 +348,7 @@ $colors: $blue, $red, $accent
 			.h3
 				font-weight: 800
 				font-size: 28px
-				margin-top: 5px
+				margin-top: 20px
 				margin-bottom: 20px
 				span
 					font-weight: 300
@@ -603,7 +650,7 @@ select
 				margin: 15px 0
 		
 		.footer-social
-			margin-top: 20px
+			margin-top: 30px
 			.social
 				li
 					display: inline-block
@@ -654,6 +701,28 @@ select
 			&:hover
 				opacity: 1
 
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	z-index: 20
+	background-color: #e0e0e0
+	border-radius: 10em
+	color: #666
+	font-size: 26px
+	width: 50px
+	height: 50px
+	text-align: center
+	line-height: 50px
+	cursor: pointer
+	opacity: .5
+	transition: all .3s ease
+	&:hover
+		color: #fff
+		background-color: $accent
+		opacity: 1
+	&.active
+		right: 25px
 
 
 

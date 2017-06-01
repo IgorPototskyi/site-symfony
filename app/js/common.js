@@ -1,9 +1,10 @@
 $(function() {
 
+// ----- Customize mmenu
 	$('#my-menu').mmenu({
 		extensions: ["theme-black", "effect-menu-slide", "pagedim-black" ],
 		navbar: {
-			title: "<img src='img/logo-top.svg' alt='Салон красоты Смитлер'>"
+			title: "<img src='img/logo-white.png' alt='Салон красоты Смитлер'>"
 		},
 		offCanvas: {
 			position: 'right'
@@ -17,6 +18,7 @@ $(function() {
 		$('.hamburger').removeClass('is-active');
 	});
 
+// ----- Carousel for services section
 	$('.carousel-services').on('initialized.owl.carousel', function() {
 		setTimeout(function() {
 			carouselService()
@@ -63,6 +65,7 @@ $(function() {
 
 	// $('select').selectize();
 
+// ----- Carousel for reviews section
 	$('.carousel-reviews').owlCarousel({
 		loop: true,
 		nav: false,
@@ -74,6 +77,7 @@ $(function() {
 		autoplayTimeout: 10000,
 	});
 
+// ----- Carousel for partners section
 	$('.carousel-partners').owlCarousel({
 		loop: true,
 		smartSpeed: 700,
@@ -100,7 +104,19 @@ $(function() {
 		},
 	});
 
-	//E-mail Ajax Send
+// ----- Top button
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > $(this).height()) {
+			$('.top').addClass('active');
+		} else {
+			$('.top').removeClass('active');
+		}
+	});
+	$('.top').click(function() {
+		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+	});
+
+// ----- E-mail Ajax Send
 	$("form.callback").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
@@ -117,7 +133,7 @@ $(function() {
 		return false;
 	});
 
-	// Resize Window
+// ----- Resize Window
 	function onResize() {
 		$('.carousel-services-item-content').equalHeights();
 	}
@@ -128,3 +144,8 @@ $(function() {
 	};
 
 });
+
+// ----- Preloader
+	$(window).on('load', function() {
+		$('.preloader').delay(1000).fadeOut('slow');
+	})
