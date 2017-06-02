@@ -1,1 +1,1 @@
-
+https://igorpototskyi.github.io/site-symfony/dist/
